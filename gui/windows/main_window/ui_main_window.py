@@ -7,6 +7,9 @@
 
 from qt_core import *
 
+#IMPORT PAGES
+from gui.pages.ui_pages import Ui_application_pages
+
 #JANELA PRINCIPAL
 class UI_MainWindow(object):
     def setup_ui(self, parent):
@@ -33,6 +36,63 @@ class UI_MainWindow(object):
         self.left_menu.setMaximumWidth(50)  #Caso escolha layout vertical trocar setMaximumWidth por setMaximumHeight e mudar QHBoxLayout por QVBoxLayout
         self.left_menu.setMinimumWidth(50)  
 
+        #LEFT MENU LAYOUT
+        self.left_menu_layout = QVBoxLayout(self.left_menu)
+        self.left_menu_layout.setContentsMargins(0,0,0,0)
+        self.left_menu_layout.setSpacing(0)
+
+        #TOP FRAME MENU
+        self.left_menu_top_frame = QFrame()
+        self.left_menu_top_frame.setMinimumHeight(50)
+        self.left_menu_top_frame.setStyleSheet("background-color: red")
+
+
+        #TOP FRAME LAYOUT
+        self.left_menu_top_layout = QVBoxLayout(self.left_menu_top_frame)
+        self.left_menu_top_layout.setContentsMargins(0,0,0,0)
+        self.left_menu_top_layout.setSpacing(0)
+
+        #TOP BUTTONS
+        self.togle_button = QPushButton("Toggle")
+        self.bt1 = QPushButton("1")
+        self.bt2 = QPushButton("2")
+
+        #ADD BUTTON TO LAYOUT
+        self.left_menu_top_layout.addWidget(self.togle_button)
+        self.left_menu_top_layout.addWidget(self.bt1)
+        self.left_menu_top_layout.addWidget(self.bt2)
+
+        #MENU SPACER
+        self.left_menu_spacer = QSpacerItem(20,20,QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        #BOTTOM FRAME MENU
+        self.left_menu_bottom_frame = QFrame()
+        self.left_menu_bottom_frame.setMinimumHeight(50)
+        self.left_menu_bottom_frame.setStyleSheet("background-color: red")
+
+        self.left_menu_bottom_layout = QVBoxLayout(self.left_menu_bottom_frame)
+        self.left_menu_bottom_layout.setContentsMargins(0,0,0,0)
+        self.left_menu_bottom_layout.setSpacing(0)
+
+        #BOTTOM BUTTONS
+        self.settings_btn = QPushButton("Settings")
+
+        #ADD BUTTON TO LAYOUT
+        self.left_menu_bottom_layout.addWidget(self.settings_btn)
+
+        #LABEL VERSION
+        self.left_menu_label_version = QLabel("v1.0.0")
+        self.left_menu_label_version.setAlignment(Qt.AlignCenter)
+        self.left_menu_label_version.setMinimumHeight(30)
+        self.left_menu_label_version.setMaximumHeight(30)
+        self.left_menu_label_version.setStyleSheet("color: #c3ccdf")
+
+        #ADD LABEL VERSION TO LAYOUT
+        self.left_menu_layout.addWidget(self.left_menu_top_frame)
+        self.left_menu_layout.addItem(self.left_menu_spacer)
+        self.left_menu_layout.addWidget(self.left_menu_bottom_frame)
+        self.left_menu_layout.addWidget(self.left_menu_label_version)
+
         #CONTEÚDO
         self.content = QFrame()
         self.content.setStyleSheet("background-color: #282a36")
@@ -49,17 +109,18 @@ class UI_MainWindow(object):
         self.top_bar.setStyleSheet("background-color: #21232d; color: #6272a4")
         self.top_label_layout = QHBoxLayout(self.top_bar)
         self.top_label_layout.setContentsMargins(10,0,10,0)
-        #LABEL ESQUERDA
+
+        #LABEL ESQUERDA SUPERIOR
         self.top_label_left = QLabel("Aplicação PySide6")
 
         #ESPAÇADOR SUPERIOR
         self.top_spacer = QSpacerItem(20,20,QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        #LABEL DIREITA
+        #LABEL DIREITA SUPERIOR
         self.top_label_right = QLabel("| Página Inicial")
         self.top_label_right.setStyleSheet("font: 700 9pt 'Segoe UI'")
 
-        #ADICIONAR AO LAYOUT
+        #ADICIONAR AO LAYOUT SUPERIOR
         self.top_label_layout.addWidget(self.top_label_left)
         self.top_label_layout.addItem(self.top_spacer)
         self.top_label_layout.addWidget(self.top_label_right)
@@ -67,7 +128,9 @@ class UI_MainWindow(object):
         #PAGINAS DO APP
         self.pages = QStackedWidget()
         self.pages.setStyleSheet("font-size: 12pt; color: #f8f8f2;") 
-
+        self.ui_pages = Ui_application_pages()
+        self.ui_pages.setupUi(self.pages)
+        self.pages.setCurrentWidget(self.ui_pages.page_3)
         #BARRA INFERIOR
         self.bottom_bar = QFrame()
         self.bottom_bar.setMinimumHeight(30)
@@ -76,17 +139,18 @@ class UI_MainWindow(object):
 
         self.bottom_label_layout = QHBoxLayout(self.bottom_bar)
         self.bottom_label_layout.setContentsMargins(10,0,10,0)
-        #LABEL ESQUERDA
-        self.bottom_label_left = QLabel("Aplicação PySide6 baio esq")
 
-        #ESPAÇADOR SUPERIOR
+        #LABEL ESQUERDA INFERIOR
+        self.bottom_label_left = QLabel("Aplicação PySide6 Feita Por: Ronaldo Fraga")
+
+        #ESPAÇADOR INFERIOR
         self.bottom_spacer = QSpacerItem(20,20,QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        #LABEL DIREITA
+        #LABEL DIREITA INFERIOR
         self.bottom_label_right = QLabel("@2021")
         self.bottom_label_right.setStyleSheet("font: 700 9pt 'Segoe UI'")
 
-        #ADICIONAR AO LAYOUT
+        #ADICIONAR AO LAYOUT INFERIOR
         self.bottom_label_layout.addWidget(self.bottom_label_left)
         self.bottom_label_layout.addItem(self.bottom_spacer)
         self.bottom_label_layout.addWidget(self.bottom_label_right)
