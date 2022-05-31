@@ -1,7 +1,7 @@
 #////////////////////////////////////////////
 #
-#BY: RONALDO DE OLIVEIRA FRAGA
-#PROJETO FEITO UTILIZANDO: Qt Designer and PySide6
+# BY: RONALDO DE OLIVEIRA FRAGA
+# PROJETO FEITO UTILIZANDO: Qt Designer and PySide6
 #
 #////////////////////////////////////////////
 
@@ -20,6 +20,9 @@ from gui.windows.main_window.ui_main_window import *
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        #TITULO DA JANELA PRINCIPAL
+        self.setWindowTitle("Curso PySide")
 
         #SETUP MAIN WINDOW
         self.ui = UI_MainWindow()

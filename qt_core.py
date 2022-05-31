@@ -1,7 +1,7 @@
 #////////////////////////////////////////////
 #
-#BY: RONALDO DE OLIVEIRA FRAGA
-#PROJETO FEITO UTILIZANDO: Qt Designer and PySide6
+# BY: RONALDO DE OLIVEIRA FRAGA
+# PROJETO FEITO UTILIZANDO: Qt Designer and PySide6
 #
 #////////////////////////////////////////////
 
