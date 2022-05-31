@@ -23,7 +23,7 @@ class MainWindow(QMainWindow):
 
         #SETUP MAIN WINDOW
         self.ui = UI_MainWindow()
-        self.ui.setup_ui(self)
+        self.ui.setup_ui(self) 
 
 
 
