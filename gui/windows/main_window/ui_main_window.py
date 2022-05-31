@@ -10,12 +10,14 @@ from qt_core import *
 #IMPORT PAGES
 from gui.pages.ui_pages import Ui_application_pages
 
+#IMPORT CUSTOM WIDGETS
+from gui.widgets.py_push_button import PyPushButton
+
 #JANELA PRINCIPAL
 class UI_MainWindow(object):
     def setup_ui(self, parent):
         if not parent.objectName():
             parent.setObjectName("MainWindow")
-        
         
         #PARAMETROS DO TAMANHO DA JANELA
         parent.resize(1200,720)
@@ -54,9 +56,19 @@ class UI_MainWindow(object):
         self.left_menu_top_layout.setSpacing(0)
 
         #TOP BUTTONS
-        self.toggle_button = QPushButton("Toggle")
-        self.bt1 = QPushButton("1")
-        self.bt2 = QPushButton("2")
+        self.toggle_button = PyPushButton(
+            text = "Ocultar Menu",
+            icon_path = "icon_menu.svg"
+        )
+        self.bt1 = PyPushButton(
+            text = "Página Inicial",
+            is_active = True,
+            icon_path = "icon_home.svg"
+            )
+        self.bt2 = PyPushButton(
+            text = "Página 2",
+            icon_path = "icon_widgets.svg"
+            )
 
         #ADD BUTTON TO LAYOUT
         self.left_menu_top_layout.addWidget(self.toggle_button)
@@ -65,7 +77,7 @@ class UI_MainWindow(object):
 
         #MENU SPACER
         self.left_menu_spacer = QSpacerItem(20,20,QSizePolicy.Minimum, QSizePolicy.Expanding)
-
+ 
         #BOTTOM FRAME MENU
         self.left_menu_bottom_frame = QFrame()
         self.left_menu_bottom_frame.setMinimumHeight(50)
@@ -77,7 +89,10 @@ class UI_MainWindow(object):
         self.left_menu_bottom_layout.setSpacing(0)
 
         #BOTTOM BUTTONS
-        self.settings_btn = QPushButton("Settings")
+        self.settings_btn = PyPushButton(
+            text = "Configurações",
+            icon_path = "icon_settings.svg"
+        )
 
         #ADD BUTTON TO LAYOUT
         self.left_menu_bottom_layout.addWidget(self.settings_btn)
