@@ -54,12 +54,12 @@ class UI_MainWindow(object):
         self.left_menu_top_layout.setSpacing(0)
 
         #TOP BUTTONS
-        self.togle_button = QPushButton("Toggle")
+        self.toggle_button = QPushButton("Toggle")
         self.bt1 = QPushButton("1")
         self.bt2 = QPushButton("2")
 
         #ADD BUTTON TO LAYOUT
-        self.left_menu_top_layout.addWidget(self.togle_button)
+        self.left_menu_top_layout.addWidget(self.toggle_button)
         self.left_menu_top_layout.addWidget(self.bt1)
         self.left_menu_top_layout.addWidget(self.bt2)
 
@@ -72,12 +72,9 @@ class UI_MainWindow(object):
         self.left_menu_bottom_frame.setObjectName("left_menu_bottom_frame")
         self.left_menu_bottom_frame.setStyleSheet("#left_menu_bottom_frame {background-color: red; }")
 
-        
         self.left_menu_bottom_layout = QVBoxLayout(self.left_menu_bottom_frame)
         self.left_menu_bottom_layout.setContentsMargins(0,0,0,0)
         self.left_menu_bottom_layout.setSpacing(0)
-
-        
 
         #BOTTOM BUTTONS
         self.settings_btn = QPushButton("Settings")

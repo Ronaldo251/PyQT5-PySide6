@@ -8,6 +8,7 @@
 #IMPORT MODULES
 import sys
 import os
+from turtle import width
 
 #IMPORT QTCORE
 from qt_core import *
@@ -27,11 +28,30 @@ class MainWindow(QMainWindow):
         #SETUP MAIN WINDOW
         self.ui = UI_MainWindow()
         self.ui.setup_ui(self) 
-
+        
+        #TOGGLE BUTTON
+        self.ui.toggle_button.clicked.connect(self.toggle_button)
 
 
         #EXIBE A JANELA DA APLICAÇÂO
         self.show()
+    def toggle_button(self):
+        #GET MENU WIDTH
+        menu_width = self.ui.left_menu.width()
+
+        #CHECK WIDTH
+        width = 50
+        if menu_width == 50:
+            width = 240
+        #START ANIMATION
+        self.animation = QPropertyAnimation(self.ui.left_menu, b"minimumWidth")
+        self.animation.setStartValue(menu_width)
+        self.animation.setEndValue(width)
+        self.animation.setDuration(500)
+        self.animation.setEasingCurve(QEasingCurve.InOutCirc)
+        self.animation.start() 
+        
+
 
 
 if __name__ == "__main__":
