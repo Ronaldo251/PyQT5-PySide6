@@ -148,7 +148,7 @@ class UI_MainWindow(object):
         self.pages.setStyleSheet("font-size: 12pt; color: #f8f8f2;") 
         self.ui_pages = Ui_application_pages()
         self.ui_pages.setupUi(self.pages)
-        self.pages.setCurrentWidget(self.ui_pages.page_3)
+        self.pages.setCurrentWidget(self.ui_pages.page_1)
         #BARRA INFERIOR
         self.bottom_bar = QFrame()
         self.bottom_bar.setMinimumHeight(30)
