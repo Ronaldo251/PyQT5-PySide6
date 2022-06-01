@@ -45,9 +45,9 @@ class UI_MainWindow(object):
 
         #TOP FRAME MENU
         self.left_menu_top_frame = QFrame()
-        self.left_menu_top_frame.setMinimumHeight(50)
+        self.left_menu_top_frame.setMinimumHeight(40)
         self.left_menu_top_frame.setObjectName("left_menu_top_frame")
-        self.left_menu_top_frame.setStyleSheet(" #left_menu_top_frame {background-color: red;}")
+        #self.left_menu_top_frame.setStyleSheet(" #left_menu_top_frame {background-color: red;}")
 
 
         #TOP FRAME LAYOUT
@@ -58,7 +58,8 @@ class UI_MainWindow(object):
         #TOP BUTTONS
         self.toggle_button = PyPushButton(
             text = "Ocultar Menu",
-            icon_path = "icon_menu.svg"
+            icon_path = "icon_menu.svg",
+            #icon_color = "green"
         )
         self.bt1 = PyPushButton(
             text = "Página Inicial",
@@ -66,7 +67,7 @@ class UI_MainWindow(object):
             icon_path = "icon_home.svg"
             )
         self.bt2 = PyPushButton(
-            text = "Página 2",
+            text = "Widgets",
             icon_path = "icon_widgets.svg"
             )
 
@@ -80,9 +81,9 @@ class UI_MainWindow(object):
  
         #BOTTOM FRAME MENU
         self.left_menu_bottom_frame = QFrame()
-        self.left_menu_bottom_frame.setMinimumHeight(50)
+        self.left_menu_bottom_frame.setMinimumHeight(40)
         self.left_menu_bottom_frame.setObjectName("left_menu_bottom_frame")
-        self.left_menu_bottom_frame.setStyleSheet("#left_menu_bottom_frame {background-color: red; }")
+        #self.left_menu_bottom_frame.setStyleSheet("#left_menu_bottom_frame {background-color: red; }")
 
         self.left_menu_bottom_layout = QVBoxLayout(self.left_menu_bottom_frame)
         self.left_menu_bottom_layout.setContentsMargins(0,0,0,0)

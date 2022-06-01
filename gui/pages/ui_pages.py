@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'pagesSBviHw.ui'
+## Form generated from reading UI file 'pageslLNDbx.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.3.0
 ##
@@ -51,7 +51,7 @@ class Ui_application_pages(object):
 
         self.retranslateUi(application_pages)
 
-        application_pages.setCurrentIndex(1)
+        application_pages.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(application_pages)
@@ -59,8 +59,8 @@ class Ui_application_pages(object):
 
     def retranslateUi(self, application_pages):
         application_pages.setWindowTitle(QCoreApplication.translate("application_pages", u"StackedWidget", None))
-        self.label_2.setText(QCoreApplication.translate("application_pages", u"P\u00e1gina 2", None))
-        self.label_3.setText(QCoreApplication.translate("application_pages", u"P\u00e1gina Inicial", None))
-        self.label.setText(QCoreApplication.translate("application_pages", u"P\u00e1gina 1", None))
+        self.label_2.setText(QCoreApplication.translate("application_pages", u"Widgets", None))
+        self.label_3.setText(QCoreApplication.translate("application_pages", u"Configura\u00e7\u00f5es", None))
+        self.label.setText(QCoreApplication.translate("application_pages", u"P\u00e1gina Inicial", None))
     # retranslateUi
 

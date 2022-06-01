@@ -119,8 +119,8 @@ class PyPushButton(QPushButton):
         #DRAW ICON
         icon = QPixmap(icon_path)
         painter = QPainter(icon)
-        #painter.begin(self)
-        painter.device()
+        #painter.begin(self)  #Usar caso o painter não ative
+        painter.device()  #Uso obrigatório para evitar erros
         painter.setCompositionMode(QPainter.CompositionMode_SourceIn)
         painter.fillRect(icon.rect(), color)
         qp.drawPixmap(

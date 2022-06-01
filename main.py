@@ -32,9 +32,27 @@ class MainWindow(QMainWindow):
         #TOGGLE BUTTON
         self.ui.toggle_button.clicked.connect(self.toggle_button)
 
+        #HOME BUTTON
+        self.ui.bt1.clicked.connect(self.show_page_1)
+
+        #WIDGET BUTTON
+        self.ui.bt2.clicked.connect(self.show_page_2)
+
+        #SETTINGS BUTTON
+        self.ui.settings_btn.clicked.connect(self.show_page_3)
 
         #EXIBE A JANELA DA APLICAÇÂO
         self.show()
+
+    def show_page_1(self):
+        self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_1)
+
+    def show_page_2(self):
+        self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_2)
+
+    def show_page_3(self):
+        self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_3)
+
     def toggle_button(self):
         #GET MENU WIDTH
         menu_width = self.ui.left_menu.width()
