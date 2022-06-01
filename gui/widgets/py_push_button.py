@@ -109,7 +109,7 @@ class PyPushButton(QPushButton):
 
         qp.end()
 
-    def draw_icon(self, qp, image, color):
+    def draw_icon(self, qp, image, rect, color):
         #FORMAT PATH
         app_path = os.path.abspath(os.getcwd())
         folder = "gui/images/icons"
@@ -119,14 +119,16 @@ class PyPushButton(QPushButton):
         #DRAW ICON
         icon = QPixmap(icon_path)
         painter = QPainter(icon)
+        #painter.begin(self)
+        painter.device()
         painter.setCompositionMode(QPainter.CompositionMode_SourceIn)
-        painter.fillRect(icon.rect(),color)
+        painter.fillRect(icon.rect(), color)
         qp.drawPixmap(
             (rect.width() - icon.width()) / 2,
             (rect.height() - icon.height()) / 2,
             icon
         )
-        
+
         painter.end()
 
         
